@@ -5,3 +5,4 @@ bower.json
 Gulpfile.js
 .editorconfig
 bin
+public/bower_components
