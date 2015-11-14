@@ -1,18 +1,18 @@
 //includes
-var util = require('util'),
-  twitter = require('twitter'),
-  sentimentAnalysis = require('./sentimentAnalysis'),
-  db = require('diskdb');
+var util = require('util');
+var twitter = require('twitter');
+var sentimentAnalysis = require('./sentimentAnalysis');
+var db = require('diskdb');
 
 db = db.connect('db', ['sentiments']);
 
 //config
 var config = {
-  consumer_key: 'XXXXX',
-  consumer_secret: 'XXXXX',
-  access_token_key: 'XXXXX-XXXXX',
-  access_token_secret: 'XXXXX'
-}
+  consumer_key: 'tunpZqKR5uZkS5C3yAZyb4gTh',
+  consumer_secret: 'utGJcRZLNasgZEEseXbGbBVyggk6Dv0EVPh5zWsQUdQOwnsGcA',
+  access_token_key: '1636189436-3HtmLXcmg8nHgxVWU0PjjQHlACQtw7hj6mW8Uu8',
+  access_token_secret: 's8gIwDwVzWuuA1XYmoafV9Q0bzZUqnyG8u4SVkT740FK0'
+};
 
 module.exports = function(text, callback) {
   var twitterClient = new twitter(config);
@@ -27,8 +27,8 @@ module.exports = function(text, callback) {
         "score" : resp.sentiment.score
       });
       response.push(resp);
-    };
+    }
     db.sentiments.save(dbData);
     callback(response);
   });
-}
+};

@@ -6,3 +6,4 @@ Gulpfile.js
 .editorconfig
 bin
 public/bower_components
+logic/twitterSearch.js
